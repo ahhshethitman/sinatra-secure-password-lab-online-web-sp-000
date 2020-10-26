@@ -1,4 +1,4 @@
-rrequire "./config/environment"
+require "./config/environment"
 require "./app/models/user"
 require 'pry'
 class ApplicationController < Sinatra::Base
