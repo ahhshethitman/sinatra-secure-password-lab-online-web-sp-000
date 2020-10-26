@@ -1,5 +1,6 @@
-require "./config/environment"
+rrequire "./config/environment"
 require "./app/models/user"
+require 'pry'
 class ApplicationController < Sinatra::Base
 
   configure do
@@ -47,6 +48,14 @@ class ApplicationController < Sinatra::Base
       redirect to '/account'
     else
       redirect to '/failure'
+    end
+  end
+
+  get "/success" do
+    if logged_in?
+      erb :success
+    else
+      redirect "/login"
     end
   end
 
